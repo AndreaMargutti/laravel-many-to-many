@@ -11,8 +11,11 @@
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav me-auto">
                 @auth
-                <li class="list-group-item">
+                <li class="list-group-item me-2">
                     <a href="{{route('admin.projects.index')}}">Projects Index</a>
+                </li>
+                <li class="list-group-item me-2">
+                    <a href="{{route('admin.types.index')}}">Types Index</a>
                 </li>
                 @endauth
             </ul>

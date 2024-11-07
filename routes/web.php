@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\ProjectController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\TypeController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -32,4 +33,9 @@ Route::middleware(['auth'])->name('admin.projects.')->prefix('admin/projects')->
     Route::get('/edit/{project}', [ProjectController::class, 'edit'])->name('edit');
     Route::put('/show/{project}', [ProjectController::class, 'update'])->name('update');
     Route::DELETE('/{project}', [ProjectController::class, 'destroy'])->name('delete');
+});
+
+Route::middleware(['auth'])->name('admin.types.')->prefix('admin/types')->group(function() {
+    Route::get('/index', [TypeController::class, 'index'])->name('index');
+    Route::get('/show/{type}', [TypeController::class, 'show'])->name('show');
 });

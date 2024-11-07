@@ -57,8 +57,6 @@
                         Delete
                     </button>
                 </form>
-
-
             </td>
         </tr>
         @endforeach
