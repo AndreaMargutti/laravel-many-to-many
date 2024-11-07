@@ -78,4 +78,11 @@ class ProjectController extends Controller
         $projects = Project::onlyTrashed()->get();
         return view ('admin.projects.trash', compact('projects'));
     }
+
+    public function forceDelete (string $id) {
+        $project = Project::onlyTrashed()->findOrFail($id); // TODO: chiedere come funziona la soft delete con le relazioni
+        $project->forceDelete();
+
+        return redirect()->route('admin.project.index',);
+    }
 }

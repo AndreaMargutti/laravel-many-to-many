@@ -20,8 +20,18 @@
             </td>
             <td>{{$project->members}}</td>
             <td>{{$project->description}}</td>
+            <td>
+                <form action="{{route('admin.projects.forceDelete', $project->id)}}" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit">
+                        Delete Permanently
+                    </button>
+                </form>
+            </td>
         </tr>
         @endforeach
+
     </tbody>
   </table>
 @endsection

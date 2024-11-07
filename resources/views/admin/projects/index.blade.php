@@ -52,7 +52,6 @@
                 <form action="{{route('admin.projects.delete', $project)}}" method="POST" class="d-inline">
                     @csrf
                     @method('DELETE')
-
                     <button type="submit" class="btn btn-warning">
                         Delete
                     </button>

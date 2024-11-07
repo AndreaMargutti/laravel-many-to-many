@@ -34,6 +34,7 @@ Route::middleware(['auth'])->name('admin.projects.')->prefix('admin/projects')->
     Route::put('/show/{project}', [ProjectController::class, 'update'])->name('update');
     Route::DELETE('/{project}', [ProjectController::class, 'destroy'])->name('delete');
     Route::get('/trash', [ProjectController::class, 'trash'])->name('trash');
+    Route::DELETE('/{id}/forceDelete', [ProjectController::class, 'forceDelete'])->name('forceDelete');
 });
 
 Route::middleware(['auth'])->name('admin.types.')->prefix('admin/types')->group(function() {
