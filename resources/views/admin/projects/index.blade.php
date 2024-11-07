@@ -33,7 +33,7 @@
             <td>{{$project->members}}</td>
             <td>{{$project->description}}</td>
             <td>
-                <button class="btn btn-primary">
+                <button class="btn btn-primary" id="edit-btn">
                     <a href="{{route('admin.projects.edit', $project)}}">
                         Edit
                     </a>
