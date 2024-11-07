@@ -13,6 +13,9 @@
         <h3>
            Made by: {{$project->members}}
         </h3>
+        @foreach ($project->technologies as $technology )
+        <span class="badge text-bg-info">{{$technology->name}}</span>
+        @endforeach
         <p>
             {{$project->description}}
         </p>
