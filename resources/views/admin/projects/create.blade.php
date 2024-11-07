@@ -20,12 +20,22 @@
 
     <label for="project-type" class="form-label">Type:</label>
     <select name="type_id" id="project-type">
-
         @foreach ($types as $type )
             <option value="{{$type->id}}">{{$type->name}}</option>
         @endforeach
-
     </select>
+
+    <div>
+        <label for="form-check">Technologies:</label>
+        @foreach ($technologies as $technology)
+        <div class="form-check" id="form-check">
+            <input class="form-check-input" type="checkbox" id="technology_check" name="technologies[]" value="{{$technology->id}}">
+            <label class="form-check-label" for="technology_check" name="technologies[]">
+                {{$technology->name}}
+            </label>
+        </div>
+        @endforeach
+    </div>
 
     <label for="project-members" class="form-label">Project Members</label>
     <input type="text" id="project-members" name="members" class="form-control"

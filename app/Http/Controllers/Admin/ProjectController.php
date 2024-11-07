@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreUpdateProjectRequest;
 use App\Models\Project;
+use App\Models\Technology;
 use App\Models\Type;
 use Illuminate\Http\Request;
 
@@ -24,14 +25,15 @@ class ProjectController extends Controller
 
     public function create () {
         $types = Type::all();
-        return view('admin.projects.create', compact('types'));
+        $technologies = Technology::all();
+        return view('admin.projects.create', compact('types', 'technologies'));
     }
 
     public function store (StoreUpdateProjectRequest $request) {
         //dd($request);
 
         $data = $request->validated();
-        //dd($data);
+        // dd($data);
 
         $newProject = new Project();
         $newProject->type_id = $data["type_id"];
@@ -39,8 +41,10 @@ class ProjectController extends Controller
         $newProject->members = $data['members'];
         $newProject->description = $data['description'];
         $newProject->save();
+        $newProject->technologies()->sync($data['technologies']);
 
-        return redirect()->route('admin.projects.show', $newProject->id);
+
+        return redirect()->route('admin.projects.index', $newProject->id);
     }
 
     public function edit (Project $project) {

@@ -27,6 +27,7 @@ class StoreUpdateProjectRequest extends FormRequest
             "name" => "required|string|min:3|max:55",
             "members" => "required|string|min:3|max:255",
             "description" => "required|string|min:3|max:255",
+            "technologies" => "required|array|exists:technologies,id",
         ];
     }
 }
