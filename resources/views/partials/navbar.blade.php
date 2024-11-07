@@ -10,7 +10,11 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav me-auto">
-
+                @auth
+                <li class="list-group-item">
+                    <a href="{{route('admin.projects.index')}}">Projects Index</a>
+                </li>
+                @endauth
             </ul>
 
             <!-- Right Side Of Navbar -->

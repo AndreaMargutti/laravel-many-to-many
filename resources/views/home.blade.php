@@ -16,15 +16,6 @@
 
                     {{ __('You are logged in!') }}
                 </div>
-                <div>
-                    <div class="card" style="width: 18rem;">
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item">
-                                <a href="{{route('admin.projects.index')}}">Projects Index</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
             </div>
         </div>
     </div>

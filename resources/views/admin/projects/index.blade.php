@@ -3,11 +3,15 @@
 
 @section('content')
 
-<h1 class="py-3">Sono l'indice</h1>
-
 <button class="btn btn-outline-primary btn-lg mb-3">
     <a href="{{route('admin.projects.create')}}">
         Create New Project
+    </a>
+</button>
+
+<button class="btn btn-outline-primary btn-lg mb-3">
+    <a href="#">
+        Create New Technology
     </a>
 </button>
 
