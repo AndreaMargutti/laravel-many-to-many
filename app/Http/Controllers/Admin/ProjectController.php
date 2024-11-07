@@ -24,9 +24,10 @@ class ProjectController extends Controller
     }
 
     public function create () {
+        $project = new Project();
         $types = Type::all();
         $technologies = Technology::all();
-        return view('admin.projects.create', compact('types', 'technologies'));
+        return view('admin.projects.create', compact('project', 'types', 'technologies'));
     }
 
     public function store (StoreUpdateProjectRequest $request) {
