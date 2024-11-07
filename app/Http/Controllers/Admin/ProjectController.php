@@ -50,8 +50,9 @@ class ProjectController extends Controller
     public function edit (Project $project) {
 
         $types = Type::all();
+        $technologies = Technology::all();
 
-        return view('admin.projects.edit', compact('project', 'types'));
+        return view('admin.projects.edit', compact('project', 'types', 'technologies'));
     }
 
     public function update (StoreUpdateProjectRequest $request, Project $project) {
@@ -63,6 +64,7 @@ class ProjectController extends Controller
         $project->description = $formData['description'];
         $project->update();
 
+        $project->technologies()->sync($formData['technologies']);
         return redirect()->route('admin.projects.show', $project);
     }
 

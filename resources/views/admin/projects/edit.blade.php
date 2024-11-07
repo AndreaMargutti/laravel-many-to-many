@@ -29,6 +29,22 @@
 
     </select>
 
+    <div>
+        <label for="form-check">Technologies:</label>
+        @foreach ($technologies as $technology)
+        <div class="form-check" id="form-check">
+            <input class="form-check-input" type="checkbox" id="technology_check" name="technologies[]" value="{{$technology->id}}"
+            @if ($project->technologies->contains($technology))
+                checked
+            @endif>
+            <label class="form-check-label" for="technology_check" name="technologies[]">
+                {{$technology->name}}
+            </label>
+        </div>
+        @endforeach
+    </div>
+
+
     <label for="project-members" class="form-label">Project Members</label>
     <input type="text" id="project-members" name="members" class="form-control"
     value="{{$project->members}}">
