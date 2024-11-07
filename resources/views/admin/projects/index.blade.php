@@ -2,18 +2,25 @@
 
 
 @section('content')
+<div class="d-flex gap-2">
+    <button class="btn btn-outline-primary btn-lg mb-3">
+        <a href="{{route('admin.projects.create')}}">
+            Create New Project
+        </a>
+    </button>
 
-<button class="btn btn-outline-primary btn-lg mb-3">
-    <a href="{{route('admin.projects.create')}}">
-        Create New Project
-    </a>
-</button>
+    <button class="btn btn-outline-primary btn-lg mb-3">
+        <a href="#">
+            Create New Type
+        </a>
+    </button>
 
-<button class="btn btn-outline-primary btn-lg mb-3">
-    <a href="#">
-        Create New Technology
-    </a>
-</button>
+    <button class="btn btn-outline-primary btn-lg mb-3">
+        <a href="#">
+            Create New Technology
+        </a>
+    </button>
+</div>
 
 <table class="table table-striped">
     <thead>
