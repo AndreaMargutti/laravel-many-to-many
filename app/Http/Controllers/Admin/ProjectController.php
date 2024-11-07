@@ -70,9 +70,12 @@ class ProjectController extends Controller
     }
 
     public function destroy (Project $project) {
-
         $project->delete();
-
         return redirect()->route('admin.projects.index');
+    }
+
+    public function trash () {
+        $projects = Project::onlyTrashed()->get();
+        return view ('admin.projects.trash', compact('projects'));
     }
 }
