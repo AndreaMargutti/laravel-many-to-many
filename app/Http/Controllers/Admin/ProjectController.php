@@ -31,7 +31,7 @@ class ProjectController extends Controller
     }
 
     public function store (StoreUpdateProjectRequest $request) {
-        //dd($request);
+        // dd($request);
 
         $data = $request->validated();
         // dd($data);
@@ -83,6 +83,6 @@ class ProjectController extends Controller
         $project = Project::onlyTrashed()->findOrFail($id); // TODO: chiedere come funziona la soft delete con le relazioni
         $project->forceDelete();
 
-        return redirect()->route('admin.project.index',);
+        return redirect()->route('admin.projects.index',);
     }
 }

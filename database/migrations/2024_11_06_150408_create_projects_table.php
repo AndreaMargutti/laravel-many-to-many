@@ -19,7 +19,7 @@ return new class extends Migration
             $table->text('description');
             $table->unsignedBigInteger("type_id");
 
-            $table->foreign("type_id")->references("id")->on("types");
+            $table->foreign("type_id")->references("id")->on("types")->cascadeOnDelete()->cascadeOnUpdate();
         });
     }
 
