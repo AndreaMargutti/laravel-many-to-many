@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\ProjectController;
+use App\Http\Controllers\Admin\TechnologyController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\TypeController;
@@ -40,4 +41,8 @@ Route::middleware(['auth'])->name('admin.projects.')->prefix('admin/projects')->
 Route::middleware(['auth'])->name('admin.types.')->prefix('admin/types')->group(function() {
     Route::get('/index', [TypeController::class, 'index'])->name('index');
     Route::get('/show/{type}', [TypeController::class, 'show'])->name('show');
+});
+
+Route::middleware(['auth'])->name('admin.technologies.')->prefix('admin/technologies')->group(function() {
+    Route::get('/index', [TechnologyController::class, 'index'])->name('index');
 });
