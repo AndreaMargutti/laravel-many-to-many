@@ -17,6 +17,9 @@
                 <li class="list-group-item me-2">
                     <a href="{{route('admin.types.index')}}">Types Index</a>
                 </li>
+                <li class="list-group-item me-2">
+                    <a href="{{route('admin.technologies.index')}}">Technologies Index</a>
+                </li>
                 @endauth
             </ul>
 
